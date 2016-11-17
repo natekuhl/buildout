@@ -1,0 +1,74 @@
+DC1990
+    --| EMPLOYMENT | STF312 | crosstab on sex
+                    | SEX BY EMPLOYMENT STATUS           
+                    | Universe: Persons 16 years and over
+                    | Male:                              
+                    |   In labor force:                  
+    STF312.P0700001 |     In Armed Forces                
+          .         |     Civilian:                      
+    STF312.P0700002 |       Employed                     
+    STF312.P0700003 |       Unemployed                   
+    STF312.P0700004 |   Not in labor force               
+          .         | Female:                            
+          .         |   In labor force:                  
+    STF312.P0700005 |     In Armed Forces                
+          .         |     Civilian:                      
+    STF312.P0700006 |       Employed                     
+    STF312.P0700007 |       Unemployed                   
+    STF312.P0700008 |   Not in labor force               
+
+    STF312.P0700001+STF312.P0700002+STF312.P0700005+STF312.P0700006
+                                    as employment__employed,
+    STF312.P0700003+STF312.P0700007 as employment__unemployed,
+
+    STF312.P0700004 + STF312.P0700008 as employment_not_in_labor_force,
+
+
+DC2000
+    p043   sex by employment status for the population 16 years and over [15]
+    p043   universe: population 16 years and over
+    SF30004.P043001    |           | total:
+    SF30004.P043002    |           | male:
+    SF30004.P043003    |           | in labor force:
+    SF30004.P043004    |           | in armed forces
+    SF30004.P043005    |           | civilian:
+    SF30004.P043006    |           | employed
+    SF30004.P043007    |           | unemployed
+    SF30004.P043008    |           | not in labor force
+
+    SF30004.P043009    |           | female:
+    SF30004.P043010    |           | in labor force:
+    SF30004.P043011    |           | in armed forces
+    SF30004.P043012    |           | civilian:
+    SF30004.P043013    |           | employed
+    SF30004.P043014    |           | unemployed
+    SF30004.P043015    |           | not in labor force
+
+
+    SF30004.P043006 + -- employed, male
+    SF30004.P043013   -- employed, female
+    as employment__employed,
+
+    SF30004.P043007 + -- unemployed, male
+    SF30004.P043014   -- unemployed, female
+    as employment__unemployed,
+
+    SF30004.P043008 + --  not in labor force, male
+    SF30004.P043015   --  not in labor force, female
+    as employment__not_in_labor_force,
+
+DC2010 -- NA
+ACS2012
+    seq0114_2012    | b270110003    | Total: In labor force: Employed:
+    seq0114_2012    | b270110014    | Total: In labor force: Unemployed:
+    seq0114_2012    | b270110025    | Total: Not in labor force:
+
+    --| EMPLOYMENT |--
+        seq0114_2012.b270110003 as employment__employed,
+        seq0114_2012.b270110014 as employment__unemployed,
+        seq0114_2012.b270110025 as employment__not_in_labor_force,
+
+ACS2014
+    --| EMPLOYMENT |--
+    civilian_employment__employed   as employment__employed,
+    civilian_employment__unemployed as employment__unemployed,

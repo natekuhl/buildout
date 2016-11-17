@@ -1,0 +1,21 @@
+--| TOTALS |--
+
+--| HOUSING STATUS |--
+    housing_status__occupied_housing_units,
+    housing_status__vacant_housing_units,
+
+--| EDUCATIONAL ATTAINMENT |--
+    education__no_high_school_diploma,
+    education__high_school,
+    education__some_college,
+    education__bachelors_degree,
+    education__graduate_degree,
+
+--| EMPLOYMENT |--
+    employment__employed,
+    employment__unemployed,
+
+--| SCHOOL ENROLLMENT AND TYPE OF SCHOOL |--
+    enrollment__public_school,
+    enrollment__private_school,
+    enrollment__not_enrolled_in_school

@@ -1,0 +1,22 @@
+--| HOUSING STATUS |--
+    housing_status__occupied_housing_units,
+    housing_status__vacant_housing_units,
+
+DC1990
+--| HOUSING STATUS |--
+    stf327.H0040001 as housing_status__occupied_housing_units,
+    stf327.H0040002 as housing_status__vacant_housing_units,
+
+DC2000
+--| HOUSING STATUS |--
+    sf30056.h006002 as housing_status__occupied_housing_units,
+    sf30056.h006003 as housing_status__vacant_housing_units,
+
+DC2010
+--| HOUSING STATUS |--
+    SF1_00044.h0030002 as housing_status__occupied_housing_units,
+    SF1_00044.h0030003 as housing_status__vacant_housing_units,
+
+ACS2014
+    total__occupied_housing_units as housing_status__occupied_housing_units,
+    total__vacant_housing_unit    as housing_status__vacant_housing_units,

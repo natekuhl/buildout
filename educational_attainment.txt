@@ -1,0 +1,252 @@
+DC1990
+    --| EDUCATIONAL ATTAINMENT |--
+    --| Universe: Persons 18 years and over
+        STF310.P0600001 + -- Less than 9th grade
+        STF310.P0600002   -- 9th to 12th grade, no diploma
+                        as education__no_high_school_diploma,
+        STF310.P0600003 as education__high_school,
+        STF310.P0600004 + -- Some college, no degree
+        STF310.P0600005   -- Associate degree
+                        as education__some_college,
+        STF310.P0600006 as education__bachelors_degree,
+        STF310.P0600007 as education__graduate_degree,
+
+
+
+DC2000 
+    --| EDUCATIONAL ATTAINMENT |--
+        p037       |            | p37.      | sex by educational attainment for the population 25 years and over [35]
+        p037       |            |           | universe: population 25 years and over
+        sf30003.p037001  -- total:
+        sf30003.p037002  -- male:
+        sf30003.p037003  -- no schooling completed
+        sf30003.p037004  -- nursery to 4th grade
+        sf30003.p037005  -- 5th and 6th grade
+        sf30003.p037006  -- 7th and 8th grade
+        sf30003.p037007  -- 9th grade
+        sf30003.p037008  -- 10th grade
+        sf30003.p037009  -- 11th grade
+        sf30003.p037010  -- 12th grade, no diploma
+        sf30003.p037011  -- high school graduate (includes equivalency)
+        sf30003.p037012  -- some college, less than 1 year
+        sf30003.p037013  -- some college, 1 or more years, no degree
+        sf30003.p037014  -- associate degree
+        sf30003.p037015  -- bachelor's degree
+        sf30003.p037016  -- master's degree
+        sf30003.p037017  -- professional school degree
+        sf30003.p037018  -- doctorate degree
+
+        sf30003.p037019  -- female:
+        sf30003.p037020  -- no schooling completed
+        sf30003.p037021  -- nursery to 4th grade
+        sf30003.p037022  -- 5th and 6th grade
+        sf30003.p037023  -- 7th and 8th grade
+        sf30003.p037024  -- 9th grade
+        sf30003.p037025  -- 10th grade
+        sf30003.p037026  -- 11th grade
+        sf30003.p037027  -- 12th grade, no diploma
+        sf30003.p037028  -- high school graduate (includes equivalency)
+        sf30003.p037029  -- some college, less than 1 year
+        sf30003.p037030  -- some college, 1 or more years, no degree
+        sf30003.p037031  -- associate degree
+        sf30003.p037032  -- bachelor's degree
+        sf30003.p037033  -- master's degree
+        sf30003.p037034  -- professional school degree
+        sf30003.p037035  -- doctorate degree
+
+
+    --no-highschool-male
+        sf30003.p037003 + -- no schooling completed
+        sf30003.p037004 + -- nursery to 4th grade
+        sf30003.p037005 + -- 5th and 6th grade
+        sf30003.p037006 + -- 7th and 8th grade
+        sf30003.p037007 + -- 9th grade
+        sf30003.p037008 + -- 10th grade
+        sf30003.p037009 + -- 11th grade
+        sf30003.p037010 + -- 12th grade, no diploma
+    --no-highschool-female
+        sf30003.p037020 +  -- no schooling completed
+        sf30003.p037021 +  -- nursery to 4th grade
+        sf30003.p037022 +  -- 5th and 6th grade
+        sf30003.p037023 +  -- 7th and 8th grade
+        sf30003.p037024 +  -- 9th grade
+        sf30003.p037025 +  -- 10th grade
+        sf30003.p037026 +  -- 11th grade
+        sf30003.p037027    -- 12th grade, no diploma
+    as education__no_high_school_diploma
+
+    --highschool
+        sf30003.p037011 + -- high school graduate (includes equivalency) male
+        sf30003.p037028   -- high school graduate (includes equivalency) female
+    as education__high_school_diploma
+
+    --some-college-male
+        sf30003.p037012 + -- some college, less than 1 year
+        sf30003.p037013 + -- some college, 1 or more years, no degree
+        sf30003.p037014 + -- associate degree
+    --some-college-female
+        sf30003.p037029 + -- some college, less than 1 year
+        sf30003.p037030 + -- some college, 1 or more years, no degree
+        sf30003.p037031   -- associate degree
+    as education__some_college
+
+    --bachelors
+        sf30003.p037015 + -- bachelor's degree male
+        sf30003.p037032   -- bachelor's degree female
+    as education__bachelors_degree
+
+    --male graduate degrees
+        sf30003.p037016 + -- master's degree
+        sf30003.p037017 + -- professional school degree
+        sf30003.p037018 + -- doctorate degree
+    --female graduate degrees
+        sf30003.p037033 + -- master's degree
+        sf30003.p037034 + -- professional school degree
+        sf30003.p037035   -- doctorate degree
+    as education__graduate_degree
+
+
+DC2010 -- nonexistant
+
+ACS2012
+    --| EDUCATIONAL ATTAINMENT |--
+    seq0043_2012.b150030002 -- No schooling completed
+    seq0043_2012.b150030003 -- Nursery school
+    seq0043_2012.b150030004 -- Kindergarten
+    seq0043_2012.b150030005 -- 1st grade
+    seq0043_2012.b150030006 -- 2nd grade
+    seq0043_2012.b150030007 -- 3rd grade
+    seq0043_2012.b150030008 -- 4th grade
+    seq0043_2012.b150030009 -- 5th grade
+    seq0043_2012.b150030010 -- 6th grade
+    seq0043_2012.b150030011 -- 7th grade
+    seq0043_2012.b150030012 -- 8th grade
+    seq0043_2012.b150030013 -- 9th grade
+    seq0043_2012.b150030014 -- 10th grade
+    seq0043_2012.b150030015 -- 11th grade
+    seq0043_2012.b150030016 -- 12th grade, no diploma
+    seq0043_2012.b150030017 -- Regular high school diploma
+    seq0043_2012.b150030018 -- GED or alternative credential
+    seq0043_2012.b150030019 -- Some college, less than 1 year
+    seq0043_2012.b150030020 -- Some college, 1 or more years, no degree
+    seq0043_2012.b150030021 -- Associates degree
+    seq0043_2012.b150030022 -- Bachelors degree
+    seq0043_2012.b150030023 -- Masters degree
+    seq0043_2012.b150030024 -- Professional school degree
+    seq0043_2012.b150030025 -- Doctorate degree
+
+
+    seq0043_2012.b150030002 + -- No schooling completed
+    seq0043_2012.b150030003 + -- Nursery school
+    seq0043_2012.b150030004 + -- Kindergarten
+    seq0043_2012.b150030005 + -- 1st grade
+    seq0043_2012.b150030006 + -- 2nd grade
+    seq0043_2012.b150030007 + -- 3rd grade
+    seq0043_2012.b150030008 + -- 4th grade
+    seq0043_2012.b150030009 + -- 5th grade
+    seq0043_2012.b150030010 + -- 6th grade
+    seq0043_2012.b150030011 + -- 7th grade
+    seq0043_2012.b150030012 + -- 8th grade
+    seq0043_2012.b150030013 + -- 9th grade
+    seq0043_2012.b150030014 + -- 10th grade
+    seq0043_2012.b150030015 + -- 11th grade
+    seq0043_2012.b150030016   -- 12th grade, no diploma
+                            as education__no_high_school_diploma,
+
+    seq0043_2012.b150030017 + -- Regular high school diploma
+    seq0043_2012.b150030018   -- GED or alternative credential
+                            as education__high_school,
+
+    seq0043_2012.b150030018 + -- GED or alternative credential
+    seq0043_2012.b150030019 + -- Some college, less than 1 year
+    seq0043_2012.b150030020 + -- Some college, 1 or more years, no degree
+    seq0043_2012.b150030021   -- Associates degree
+                            as education__some_college,
+
+    seq0043_2012.b150030022 as education__bachelors_degree,
+
+    seq0043_2012.b150030023 + -- Masters degree
+    seq0043_2012.b150030024 + -- Professional school degree
+    seq0043_2012.b150030025   -- Doctorate degree
+                            as education__graduate_degree,
+
+
+ACS2014
+    seq0042.B15003 -- EDUCATIONAL ATTAINMENT FOR THE POPULATION 25 YEARS AND OVER
+    seq0042.B15003 -- Universe:  Population 25 years and over
+    seq0042.B15003 -- Total:
+    seq0042.B15003 -- No schooling completed
+    seq0042.B15003 -- Nursery school
+    seq0042.B15003 -- Kindergarten
+    seq0042.B15003 -- 1st grade
+    seq0042.B15003 -- 2nd grade
+    seq0042.B15003 -- 3rd grade
+    seq0042.B15003 -- 4th grade
+    seq0042.B15003 -- 5th grade
+    seq0042.B15003 -- 6th grade
+    seq0042.B15003 -- 7th grade
+    seq0042.B15003 -- 8th grade
+    seq0042.B15003 -- 9th grade
+    seq0042.B15003 -- 10th grade
+    seq0042.B15003 -- 11th grade
+    seq0042.B15003 -- 12th grade, no diploma
+    seq0042.B15003 -- Regular high school diploma
+    seq0042.B15003 -- GED or alternative credential
+    seq0042.B15003 -- Some college, less than 1 year
+    seq0042.B15003 -- Some college, 1 or more years, no degree
+    seq0042.B15003 -- Associate's degree
+    seq0042.B15003 -- Bachelor's degree
+    seq0042.B15003 -- Master's degree
+    seq0042.B15003 -- Professional school degree
+    seq0042.B15003 -- Doctorate degree
+
+--| EDUCATIONAL ATTAINMENT From Source |--
+    seq0042.B15003 + -- No schooling completed
+    seq0042.B15003 + -- Nursery school
+    seq0042.B15003 + -- Kindergarten
+    seq0042.B15003 + -- 1st grade
+    seq0042.B15003 + -- 2nd grade
+    seq0042.B15003 + -- 3rd grade
+    seq0042.B15003 + -- 4th grade
+    seq0042.B15003 + -- 5th grade
+    seq0042.B15003 + -- 6th grade
+    seq0042.B15003 + -- 7th grade
+    seq0042.B15003 + -- 8th grade
+    seq0042.B15003 + -- 9th grade
+    seq0042.B15003 + -- 10th grade
+    seq0042.B15003 + -- 11th grade
+    seq0042.B15003   -- 12th grade, no diploma
+    as education__no_high_school_diploma,
+
+    seq0042.B15003 + -- Regular high school diploma
+    seq0042.B15003   -- GED or alternative credential
+    as education__high_school,
+
+    seq0042.B15003 + -- Some college, less than 1 year
+    seq0042.B15003 + -- Some college, 1 or more years, no degree
+    seq0042.B15003   -- Associate's degree
+    as education__some_college,
+
+    seq0042.B15003 -- Bachelor's degree
+    as education__bachelors_degree,
+
+    seq0042.B15003 + -- Master's degree
+    seq0042.B15003 + -- Professional school degree
+    seq0042.B15003   -- Doctorate degree
+    as education__graduate_degree,
+
+
+--| EDUCATIONAL ATTAINMENT |--
+    education__less_than_9th_grade +
+    education__9th_to_12th_no_diploma
+    as education__no_high_school_diploma,
+
+    education__high_school_degree
+    as education__high_school,
+
+    education__some_college_no_degree +
+    education__associates_degree
+    as education__some_college,
+
+    education__bachelors_degree,
+    education__graduate_degree,

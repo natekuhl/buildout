@@ -1,0 +1,290 @@
+DC1990
+    STF310                 SCHOOL ENROLLMENT AND TYPE OF SCHOOL
+                           Universe: Persons 3 years and over
+                           Enrolled in preprimary school:
+    STF310     P0540001      Public school
+    STF310     P0540002      Private school
+                           Enrolled in elementary or high school:
+    STF310     P0540003      Public school
+    STF310     P0540004      Private school
+                           Enrolled in college:
+    STF310     P0540005      Public school
+    STF310     P0540006      Private school
+    STF310     P0540007    Not enrolled in school
+
+
+    --| SCHOOL ENROLLMENT AND TYPE OF SCHOOL | Universe: Persons 3 years and over
+    STF310.P0540001 + -- Public school -- preprimary
+    STF310.P0540003 + -- Public school -- elementary and highschool
+    STF310.P0540005   -- Public school -- college
+    as enrollment__public_school,
+
+    STF310.P0540002 + -- Private school -- preprimary
+    STF310.P0540004 + -- Private school -- elementary and highschool
+    STF310.P0540006   -- Private school -- college
+    as enrollment__private_school,
+
+    stf310.p0540007 as enrollment__not_enrolled_in_school
+
+
+
+DC2000
+     |            | sex by school enrollment by level of school by type of school for the population 3 years and over [47]
+     |            | universe:  population 3 years and over
+    SF30003.p036001 -- total:
+    SF30003.p036002 -- male:
+    SF30003.p036003 -- enrolled in nursery school, preschool:
+    SF30003.p036004 -- public school
+    SF30003.p036005 -- private school
+    SF30003.p036006 -- enrolled in kindergarten:
+    SF30003.p036007 -- public school
+    SF30003.p036008 -- private school
+    SF30003.p036009 -- enrolled in grade 1 to grade 4:
+    SF30003.p036010 -- public school
+    SF30003.p036011 -- private school
+    SF30003.p036012 -- enrolled in grade 5 to grade 8:
+    SF30003.p036013 -- public school
+    SF30003.p036014 -- private school
+    SF30003.p036015 -- enrolled in grade 9 to grade 12:
+    SF30003.p036016 -- public school
+    SF30003.p036017 -- private school
+    SF30003.p036018 -- enrolled in college, undergraduate years:
+    SF30003.p036019 -- public school
+    SF30003.p036020 -- private school
+    SF30003.p036021 -- enrolled in graduate or professional school:
+    SF30003.p036022 -- public school
+    SF30003.p036023 -- private school
+    SF30003.p036024 -- not enrolled in school
+
+    SF30003.p036025 -- female:
+    SF30003.p036026 -- enrolled in nursery school, preschool:
+    SF30003.p036027 -- public school
+    SF30003.p036028 -- private school
+    SF30003.p036029 -- enrolled in kindergarten:
+    SF30003.p036030 -- public school
+    SF30003.p036031 -- private school
+    SF30003.p036032 -- enrolled in grade 1 to grade 4:
+    SF30003.p036033 -- public school
+    SF30003.p036034 -- private school
+    SF30003.p036035 -- enrolled in grade 5 to grade 8:
+    SF30003.p036036 -- public school
+    SF30003.p036037 -- private school
+    SF30003.p036038 -- enrolled in grade 9 to grade 12:
+    SF30003.p036039 -- public school
+    SF30003.p036040 -- private school
+    SF30003.p036041 -- enrolled in college, undergraduate years:
+    SF30003.p036042 -- public school
+    SF30003.p036043 -- private school
+    SF30003.p036044 -- enrolled in graduate or professional school:
+    SF30003.p036045 -- public school
+    SF30003.p036046 -- private school
+    SF30003.p036047 -- not enrolled in school
+
+
+    --| SCHOOL ENROLLMENT AND TYPE OF SCHOOL |--
+    --male-public-school
+    SF30003.p036004+SF30003.p036007+SF30003.p036010+SF30003.p036013+SF30003.p036016+SF30003.p036019+SF30003.p036022 +
+    --female
+    SF30003.p036027+SF30003.p036030+SF30003.p036033+SF30003.p036036+SF30003.p036039+SF30003.p036042+SF30003.p036045
+    as enrollment__public_school,
+
+    --male private school
+    SF30003.p036005+SF30003.p036008+SF30003.p036011+SF30003.p036014+SF30003.p036017+SF30003.p036020+SF30003.p036023 +
+    --female
+    SF30003.p036028+SF30003.p036031+SF30003.p036034+SF30003.p036037+SF30003.p036040+SF30003.p036043+SF30003.p036046
+    as enrollment__private_school,
+
+    SF30003.p036024 + -- not enrolled in school, male
+    SF30003.p036047   -- not enrolled in school, female
+    as enrollment__not_enrolled_in_school,
+
+
+
+DC2010 NA
+
+ACS2012
+    seq0041_2012    | b140030003    | Total: Male: Enrolled in public school:
+        seq0041_2012    | b140030004    | Total: Male: Enrolled in public school: 3 and 4 years
+        seq0041_2012    | b140030005    | Total: Male: Enrolled in public school: 5 to 9 years
+        seq0041_2012    | b140030006    | Total: Male: Enrolled in public school: 10 to 14 years
+        seq0041_2012    | b140030007    | Total: Male: Enrolled in public school: 15 to 17 years
+        seq0041_2012    | b140030008    | Total: Male: Enrolled in public school: 18 and 19 years
+        seq0041_2012    | b140030009    | Total: Male: Enrolled in public school: 20 to 24 years
+        seq0041_2012    | b140030010    | Total: Male: Enrolled in public school: 25 to 34 years
+        seq0041_2012    | b140030011    | Total: Male: Enrolled in public school: 35 years and over
+    seq0041_2012    | b140030012    | Total: Male: Enrolled in private school:
+        seq0041_2012    | b140030013    | Total: Male: Enrolled in private school: 3 and 4 years
+        seq0041_2012    | b140030014    | Total: Male: Enrolled in private school: 5 to 9 years
+        seq0041_2012    | b140030015    | Total: Male: Enrolled in private school: 10 to 14 years
+        seq0041_2012    | b140030016    | Total: Male: Enrolled in private school: 15 to 17 years
+        seq0041_2012    | b140030017    | Total: Male: Enrolled in private school: 18 and 19 years
+        seq0041_2012    | b140030018    | Total: Male: Enrolled in private school: 20 to 24 years
+        seq0041_2012    | b140030019    | Total: Male: Enrolled in private school: 25 to 34 years
+        seq0041_2012    | b140030020    | Total: Male: Enrolled in private school: 35 years and over
+    seq0041_2012    | b140030021    | Total: Male: Not enrolled in school:
+        seq0041_2012    | b140030022    | Total: Male: Not enrolled in school: 3 and 4 years
+        seq0041_2012    | b140030023    | Total: Male: Not enrolled in school: 5 to 9 years
+        seq0041_2012    | b140030024    | Total: Male: Not enrolled in school: 10 to 14 years
+        seq0041_2012    | b140030025    | Total: Male: Not enrolled in school: 15 to 17 years
+        seq0041_2012    | b140030026    | Total: Male: Not enrolled in school: 18 and 19 years
+        seq0041_2012    | b140030027    | Total: Male: Not enrolled in school: 20 to 24 years
+        seq0041_2012    | b140030028    | Total: Male: Not enrolled in school: 25 to 34 years
+        seq0041_2012    | b140030029    | Total: Male: Not enrolled in school: 35 years and over
+
+    seq0041_2012    | b140040002    | Total: Male:
+    seq0041_2012    | b140040003    | Total: Male: Enrolled in public college or graduate school:
+        seq0041_2012    | b140040004    | Total: Male: Enrolled in public college or graduate school: 15 to 17 years
+        seq0041_2012    | b140040005    | Total: Male: Enrolled in public college or graduate school: 18 to 24 years
+        seq0041_2012    | b140040006    | Total: Male: Enrolled in public college or graduate school: 25 to 34 years
+        seq0041_2012    | b140040007    | Total: Male: Enrolled in public college or graduate school: 35 years and over
+    seq0041_2012    | b140040008    | Total: Male: Enrolled in private college or graduate school:
+        seq0041_2012    | b140040009    | Total: Male: Enrolled in private college or graduate school: 15 to 17 years
+        seq0041_2012    | b140040010    | Total: Male: Enrolled in private college or graduate school: 18 to 24 years
+        seq0041_2012    | b140040011    | Total: Male: Enrolled in private college or graduate school: 25 to 34 years
+        seq0041_2012    | b140040012    | Total: Male: Enrolled in private college or graduate school: 35 years and over
+    seq0041_2012    | b140040013    | Total: Male: Not enrolled in college or graduate school:
+        seq0041_2012    | b140040014    | Total: Male: Not enrolled in college or graduate school: 15 to 17 years
+        seq0041_2012    | b140040015    | Total: Male: Not enrolled in college or graduate school: 18 to 24 years
+        seq0041_2012    | b140040016    | Total: Male: Not enrolled in college or graduate school: 25 to 34 years
+        seq0041_2012    | b140040017    | Total: Male: Not enrolled in college or graduate school: 35 years and over
+
+    seq0041_2012    | b140030030    | Total: Female:
+    seq0041_2012    | b140030031    | Total: Female: Enrolled in public school:
+        seq0041_2012    | b140030032    | Total: Female: Enrolled in public school: 3 and 4 years
+        seq0041_2012    | b140030033    | Total: Female: Enrolled in public school: 5 to 9 years
+        seq0041_2012    | b140030034    | Total: Female: Enrolled in public school: 10 to 14 years
+        seq0041_2012    | b140030035    | Total: Female: Enrolled in public school: 15 to 17 years
+        seq0041_2012    | b140030036    | Total: Female: Enrolled in public school: 18 and 19 years
+        seq0041_2012    | b140030037    | Total: Female: Enrolled in public school: 20 to 24 years
+        seq0041_2012    | b140030038    | Total: Female: Enrolled in public school: 25 to 34 years
+        seq0041_2012    | b140030039    | Total: Female: Enrolled in public school: 35 years and over
+    seq0041_2012    | b140030040    | Total: Female: Enrolled in private school:
+        seq0041_2012    | b140030041    | Total: Female: Enrolled in private school: 3 and 4 years
+        seq0041_2012    | b140030042    | Total: Female: Enrolled in private school: 5 to 9 years
+        seq0041_2012    | b140030043    | Total: Female: Enrolled in private school: 10 to 14 years
+        seq0042_2012    | b14007b0006   | Total: Enrolled in school: Enrolled in grade 2
+        seq0041_2012    | b140030044    | Total: Female: Enrolled in private school: 15 to 17 years
+        seq0041_2012    | b140030045    | Total: Female: Enrolled in private school: 18 and 19 years
+        seq0041_2012    | b140030046    | Total: Female: Enrolled in private school: 20 to 24 years
+        seq0041_2012    | b140030047    | Total: Female: Enrolled in private school: 25 to 34 years
+        seq0041_2012    | b140030048    | Total: Female: Enrolled in private school: 35 years and over
+    seq0041_2012    | b140030049    | Total: Female: Not enrolled in school:
+        seq0041_2012    | b140030050    | Total: Female: Not enrolled in school: 3 and 4 years
+        seq0041_2012    | b140030051    | Total: Female: Not enrolled in school: 5 to 9 years
+        seq0041_2012    | b140030052    | Total: Female: Not enrolled in school: 10 to 14 years
+        seq0041_2012    | b140030053    | Total: Female: Not enrolled in school: 15 to 17 years
+        seq0041_2012    | b140030054    | Total: Female: Not enrolled in school: 18 and 19 years
+        seq0041_2012    | b140030055    | Total: Female: Not enrolled in school: 20 to 24 years
+        seq0041_2012    | b140030056    | Total: Female: Not enrolled in school: 25 to 34 years
+        seq0041_2012    | b140030057    | Total: Female: Not enrolled in school: 35 years and over
+
+    seq0041_2012    | b140040019    | Total: Female: Enrolled in public college or graduate school:
+        seq0041_2012    | b140040020    | Total: Female: Enrolled in public college or graduate school: 15 to 17 years
+        seq0041_2012    | b140040021    | Total: Female: Enrolled in public college or graduate school: 18 to 24 years
+        seq0041_2012    | b140040022    | Total: Female: Enrolled in public college or graduate school: 25 to 34 years
+        seq0041_2012    | b140040023    | Total: Female: Enrolled in public college or graduate school: 35 years and over
+    seq0041_2012    | b140040024    | Total: Female: Enrolled in private college or graduate school:
+        seq0041_2012    | b140040025    | Total: Female: Enrolled in private college or graduate school: 15 to 17 years
+        seq0041_2012    | b140040026    | Total: Female: Enrolled in private college or graduate school: 18 to 24 years
+        seq0041_2012    | b140040027    | Total: Female: Enrolled in private college or graduate school: 25 to 34 years
+        seq0041_2012    | b140040028    | Total: Female: Enrolled in private college or graduate school: 35 years and over
+    seq0041_2012    | b140040029    | Total: Female: Not enrolled in college or graduate school:
+        seq0041_2012    | b140040030    | Total: Female: Not enrolled in college or graduate school: 15 to 17 years
+        seq0041_2012    | b140040031    | Total: Female: Not enrolled in college or graduate school: 18 to 24 years
+        seq0041_2012    | b140040032    | Total: Female: Not enrolled in college or graduate school: 25 to 34 years
+        seq0041_2012    | b140040033    | Total: Female: Not enrolled in college or graduate school: 35 years and over
+
+    --| SCHOOL ENROLLMENT AND TYPE OF SCHOOL |--
+    seq0041_2012.b140030003 + -- Total: Male: Enrolled in public school:
+    seq0041_2012.b140040003 + -- Total: Male: Enrolled in public college or graduate school:
+    seq0041_2012.b140030031 + -- Total: Female: Enrolled in public school:
+    seq0041_2012.b140040019   -- Total: Female: Enrolled in public college or graduate school:
+    as enrollment__public_school,
+
+    seq0041_2012.b140030012 + -- Total: Male: Enrolled in private school:
+    seq0041_2012.b140040008 + -- Total: Male: Enrolled in private college or graduate school:
+    seq0041_2012.b140030040 + -- Total: Female: Enrolled in private school:
+    seq0041_2012.b140040024   -- Total: Female: Enrolled in private college or graduate school:
+    as enrollment__private_school,
+
+    seq0041_2012.b140030021 + -- Total: Male: Not enrolled in school:
+    seq0041_2012.b140040013 + -- Total: Male: Not enrolled in college or graduate school:
+    seq0041_2012.b140030049 + -- Total: Female: Not enrolled in school:
+    seq0041_2012.b140040029   -- Total: Female: Not enrolled in college or graduate school:
+    as enrollment__not_enrolled_in_school
+
+
+ACS2014
+    seq0040         | B1400300      | School Enrollment                   | SEX BY SCHOOL ENROLLMENT BY TYPE OF SCHOOL BY AGE FOR THE POPULATION 3 YEARS AND OVER
+    seq0040         | B1400300      |                                     | Universe:  Population 3 years and over
+    seq0040         | B14003001     |                                     | Total:
+    seq0040         | B14003002     |                                     | Male:
+    seq0040         | B14003003     |                                     | Enrolled in public school:
+        seq0040         | B14003004     |                                     | 3 and 4 years
+        seq0040         | B14003005     |                                     | 5 to 9 years
+        seq0040         | B14003006     |                                     | 10 to 14 years
+        seq0040         | B14003007     |                                     | 15 to 17 years
+        seq0040         | B14003008     |                                     | 18 and 19 years
+        seq0040         | B14003009     |                                     | 20 to 24 years
+        seq0040         | B14003010     |                                     | 25 to 34 years
+        seq0040         | B14003011     |                                     | 35 years and over
+    seq0040         | B14003012     |                                     | Enrolled in private school:
+        seq0040         | B14003013     |                                     | 3 and 4 years
+        seq0040         | B14003014     |                                     | 5 to 9 years
+        seq0040         | B14003015     |                                     | 10 to 14 years
+        seq0040         | B14003016     |                                     | 15 to 17 years
+        seq0040         | B14003017     |                                     | 18 and 19 years
+        seq0040         | B14003018     |                                     | 20 to 24 years
+        seq0040         | B14003019     |                                     | 25 to 34 years
+        seq0040         | B14003020     |                                     | 35 years and over
+    seq0040         | B14003021     |                                     | Not enrolled in school:
+        seq0040         | B14003022     |                                     | 3 and 4 years
+        seq0040         | B14003023     |                                     | 5 to 9 years
+        seq0040         | B14003024     |                                     | 10 to 14 years
+        seq0040         | B14003025     |                                     | 15 to 17 years
+        seq0040         | B14003026     |                                     | 18 and 19 years
+        seq0040         | B14003027     |                                     | 20 to 24 years
+        seq0040         | B14003028     |                                     | 25 to 34 years
+        seq0040         | B14003029     |                                     | 35 years and over
+
+    seq0040         | B14003030     |                                     | Female:
+    seq0040         | B14003031     |                                     | Enrolled in public school:
+        seq0040         | B14003032     |                                     | 3 and 4 years
+        seq0040         | B14003033     |                                     | 5 to 9 years
+        seq0040         | B14003034     |                                     | 10 to 14 years
+        seq0040         | B14003035     |                                     | 15 to 17 years
+        seq0040         | B14003036     |                                     | 18 and 19 years
+        seq0040         | B14003037     |                                     | 20 to 24 years
+        seq0040         | B14003038     |                                     | 25 to 34 years
+        seq0040         | B14003039     |                                     | 35 years and over
+    seq0040         | B14003040     |                                     | Enrolled in private school:
+        seq0040         | B14003041     |                                     | 3 and 4 years
+        seq0040         | B14003042     |                                     | 5 to 9 years
+        seq0040         | B14003043     |                                     | 10 to 14 years
+        seq0040         | B14003044     |                                     | 15 to 17 years
+        seq0040         | B14003045     |                                     | 18 and 19 years
+        seq0040         | B14003046     |                                     | 20 to 24 years
+        seq0040         | B14003047     |                                     | 25 to 34 years
+        seq0040         | B14003048     |                                     | 35 years and over
+    seq0040         | B14003049     |                                     | Not enrolled in school:
+        seq0040         | B14003050     |                                     | 3 and 4 years
+        seq0040         | B14003051     |                                     | 5 to 9 years
+        seq0040         | B14003052     |                                     | 10 to 14 years
+        seq0040         | B14003053     |                                     | 15 to 17 years
+        seq0040         | B14003054     |                                     | 18 and 19 years
+        seq0040         | B14003055     |                                     | 20 to 24 years
+        seq0040         | B14003056     |                                     | 25 to 34 years
+        seq0040         | B14003057     |                                     | 35 years and over
+
+    --| SCHOOL ENROLLMENT AND TYPE OF SCHOOL | Universe:  Population 3 years and over |--
+    seq0040.B14003003 + -- Enrolled in public school:
+    seq0040.B14003031   -- Enrolled in public school: 
+    as enrollment__public_school,
+    seq0040.B14003012 + -- Enrolled in private school:
+    seq0040.B14003040   -- Enrolled in private school: 
+    as enrollment__private_school,
+    seq0040.B14003021 + -- Not enrolled in school:
+    seq0040.B14003049   -- Not enrolled in school: 
+    as enrollment__not_enrolled_in_school
+
+

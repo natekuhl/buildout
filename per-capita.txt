@@ -1,0 +1,38 @@
+DC1990
+
+ STF322.         | PER CAPITA INCOME IN 1989
+ .               | Universe: Persons
+ STF322.P114A001 | Per capita income in 1989
+ STF322.         | PER CAPITA INCOME IN 1989 BY GROUP QUARTERS
+ .               | Universe: Persons
+ .               | Per capita income in 1989:
+ STF322.P114B001 |   In households
+ .               |   In group quarters:
+ STF322.P114B002 |     Institutionalized persons
+ STF322.P114B003 |     Other persons in group quarters
+ STF322.P114B004 |   Filler
+
+ STF322.         | PER CAPITA INCOME IN 1989 BY RACE
+ .               | Universe: Persons
+ .               | Per capita income in 1989:
+ STF322.P115A001 |   White
+ STF322.P115A002 |   Black
+ STF322.P115A003 |   American Indian, Eskimo, or Aleut
+ STF322.P115A004 |   Asian or Pacific Islander
+ STF322.P115A005 |   Other race
+
+
+select STF322.P114A001,
+STF322.P115A001
+,STF322.P115A002
+,STF322.P115A003
+,STF322.P115A004,
+(
+    STF322.P115A001
+    +STF322.P115A002
+    +STF322.P115A003
+    +STF322.P115A004
+    +STF322.P115A005
+    +STF322.P115A005
+)/6
+from dc1990.STF322 limit 100;

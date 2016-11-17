@@ -1,0 +1,14 @@
+x Median Earnings - Female
+x Median Earnings - Male
+Gross Rent as a Percentage of Income
+Household Size
+Per Capita Income
+Travel Time to Work
+Children / Presence of Children
+Median Year Structure Built
+Population Under 18
+Families Below Poverty Level - 2010, 2012
+
+should match:
+p090       | p090002    |           | income in 1999 below poverty level:
+p092       | p092002    |           | income in 1999 below poverty level:
