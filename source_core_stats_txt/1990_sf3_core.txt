@@ -1,0 +1,15 @@
+
+
+--|  MEDIAN YEAR STRUCTURE BUILT | Universe: housing units
+    h025a001 -- Median year structure built
+    as median_year_structure_built
+
+
+
+
+
+
+FROM dc1990.stf1a0 header
+join dc1990.stf329 using (statefp, logrecnu)
+;
+

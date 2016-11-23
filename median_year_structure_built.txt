@@ -1,0 +1,20 @@
+
+DC1990
+	STF329                  MEDIAN YEAR STRUCTURE BUILT                                        
+	STF329                  Universe: Housing units                                             
+	STF329     H025A001     Median year structure built
+
+
+SELECT
+name,
+--|  MEDIAN YEAR STRUCTURE BUILT | Universe: housing units
+	h025a001 -- Median year structure built 
+	as median_year_structure_built
+FROM dc1990.stf1a0 header
+join dc1990.stf329 using (logrecnu)
+where header.sumlev = '040'
+and geocomp = '00'
+limit 1000;
+
+
+
