@@ -1,0 +1,5 @@
+--| MEDIAN YEAR STRUCTURE BUILT | Universe: housing units
+     B25035001 -- Median year structure built
+     as median_year_structure_built
+FROM acs2014.geoheader header
+join acs2014.seq0104 USING (stusab, logrecno);

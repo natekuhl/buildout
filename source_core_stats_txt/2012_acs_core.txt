@@ -1,0 +1,5 @@
+--| MEDIAN YEAR STRUCTURE BUILT | (meta table doesn't specify universe)
+     b250350001 -- Median year structure built
+     as median_year_structure_built
+FROM acs_2012.geoheader_2012 header
+join acs_2012.seq0104_2012 USING (stusab, logrecno);

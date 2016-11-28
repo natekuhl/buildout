@@ -1,0 +1,8 @@
+--| MEDIAN YEAR STRUCTURE BUILT |  Universe:  housing units
+     h035001 -- Median year structure built
+     as median_year_structure_built
+FROM dc2000.geosf3 header
+join dc2000.sf30058 USING (stusab, logrecno)
+where header.sumlev = '040'
+and geocomp = '00'
+limit 1000;
