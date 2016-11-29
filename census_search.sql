@@ -37,25 +37,25 @@ create or replace function census_search(text) returns table(
     select row_number() OVER () as rnum, table_id ||'-'|| field_code as source10sf2, field_name as desc10sf2
     from dc2010.sf2_meta_2010
     where field_name ilike '%'||replace($1,' ','%')||'%'
-    ), --ACS2008-2012 
+    ), --ACS2008-2012
     acs2012 as (
     select row_number() OVER () as rnum, sequence_number ||'-'|| table_id as source12, table_title as desc12
     from acs_2012.meta
     where table_title ilike '%'||replace($1,' ','%')||'%'
-    ), --ACS2014 
+    ), --ACS2014
     acs2014 as (
     select row_number() OVER () as rnum, sequence_number||source_column as source14, table_title as desc14
     from acs2014.meta
     where table_title ilike '%'||replace($1,' ','%')||'%'
-    ) 
-    select 
+    )
+    select
         source90sf1 , desc90sf1 ,
         source90sf3 , desc90sf3 ,
         source00sf1 , desc00sf1 ,
         source00sf3 , desc00sf3 ,
         source10sf1 , desc10sf1 ,
         source12 ,    desc12    ,
-        source14 ,    desc14    
+        source14 ,    desc14
 
     from dc1990_sf1
     full outer join dc1990_sf3 using (rnum)

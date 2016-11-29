@@ -1,24 +1,32 @@
 *****ACS_2012*****
 
-    SEQ0049_2012                      Families (poor labeling) 
+ SEQ0050                    (I think Universe=families, poor labeling in acs 2012 meta)
+ SEQ0050
+ SEQ0050     B170100002     Total: Income in the past 12 months below poverty level:
 
-    SEQ0049_2012                      Universe: Families (poor labeling in acs 2014 meta)
-
-    SEQ0049_2012     B170060002       Total: Income in the past 12 months below poverty level:
-
-SELECT 
+SELECT
 name,
--- | TOTAL: INCOME IN THE PAST 12 MONTHS BELOW POVERTY LEVEL | Universe: families
-B170060002
+--| FAMILIES BELOW POVERTY LEVEL | Universe=families (i think, poor labeling)
+B170100002 -- Total: Income in the past 12 months below poverty level:
 as total__families_below_poverty_level
-FROM acs_2012.geoheader_2012 header
-join  acs_2012.SEQ0049_2012 USING (stusab, logrecno)
+FROM acs2012.geoheader header
+join  acs2012.seq0050 USING (stusab, logrecno)
 where header.sumlevel = '040'
 and component = '00'
 limit 1000;
 
-select x.b170100002, y.B170060002 from acs_2012.seq0050_2012 x join acs_2012.SEQ0049_2012 y using (stusab, logrecno) limit 1000;
+ -- select
+ -- name,
+ -- x.b170100002 as married,
+ -- y.B170060002 as in_married
+ -- from acs2012.geoheader header 
+ -- join acs2012.seq0050 x using (stusab, logrecno) 
+ -- join acs2012.SEQ0049 y using (stusab, logrecno) 
+ -- where header.sumlevel = '040'
+ -- and component = '00'
+ -- limit 1000;
 
+ --comparing the two suspect variables side-by-side with the commented out query above, you can see that one of the variables (b170100002) is closer to the results of the query below
 
 
 *****ACS2014*****
@@ -42,7 +50,7 @@ and component = '00'
 limit 1000;
 
 
- --  select x.b17012002, y.b17010002 from acs2014.seq0052 x join acs2014.seq0050 y using (stusab, logrecno) limit 1000;
+select x.b17012002, y.b17010002 from acs2014.seq0052 x join acs2014.seq0050 y using (stusab, logrecno) limit 1000;
  -- ^ above query checks whether two variables in two different tables are the same`
 
 

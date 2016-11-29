@@ -1,8 +1,21 @@
 --| MEDIAN YEAR STRUCTURE BUILT |  Universe:  housing units
      h035001 -- Median year structure built
-     as median_year_structure_built
+     as median_year_structure_built,
+
+--|PRESENCE OF CHILDREN | Universe: households
+     p010008 + --  married-couple family: with own children under 18 years
+     p010012 + --  other family: male householder, no wife present: with own children under 18 years
+     p010015   --  other family: female householder, no husband present: with own children under 18 years
+     as total__family_households_with_children,
+
+
+
+
+
+
 FROM dc2000.geosf3 header
-join dc2000.sf30058 USING (stusab, logrecno)
+join dc2000.sf30058 USING (stusab, logrecno) -- median year structure built
+join dc2000.sf30001 USING (stusab, logrecno) -- presence of children
 where header.sumlev = '040'
 and geocomp = '00'
 limit 1000;

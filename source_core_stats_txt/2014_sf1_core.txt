@@ -3,12 +3,26 @@
      B25035001 -- Median year structure built
      as median_year_structure_built,
 
+-- | FAMILY TYPE BY PRESENCE AND AGE OF RELATED CHILDREN UNDER 18 YEARS | Universe: Families
+     B11004003 + -- family households: Married-couple family: with own children under 18 years
+     B11004010 + -- family households: other family: male householder, no wife present: with own children under 18 years
+     B11004016   -- family households: other family: female householder, no husband present: with own children under 18 years
+     as total__family_households_with_children,
+
+
+
+
+
 --| POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE BY PRESENCE OF RELATED CHILDREN UNDER 18 YEARS BY AGE OF RELATED CHILDREN | Universe: families
      b17010002 -- Income in the past 12 months below poverty level
      as total__families_below_poverty_level,
 
 FROM acs2014.geoheader header
-JOIN acs2014.seq0104 USING (stusab, logrecno)
-JOIN acs2014.seq0050 USING (stusab, logrecno);
+JOIN acs2014.seq0104 USING (stusab, logrecno) -- median year structure built
+JOIN acs2014.seq0050 USING (stusab, logrecno) -- families in poverty
+join acs2014.seq0036 using (stusab, logrecno) -- presence of children
+
+
+:
 
 
