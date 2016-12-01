@@ -16,25 +16,21 @@ DC1990
      STF306     P0190007     Nonfamily households                           
 
 
-
-SELECT
-stusab,
---| PRESENCE OF CHILDREN | Universe: households
---           Family Households:          
---             Married-couple family:
-P0190001 + --          With own children under 18 years       
---             Other family:                            
---               Male householder, no wife present:     
-P0190003 + --          With own children under 18 years     
---               Female householder, no husband present:
-P0190005   --          With own children under 18 years     
-as total__family_households_with_children
-FROM dc1990.stf1a0 header
-JOIN dc1990.stf306 USING (statefp, logrecnu)
-where header.sumlev = '040'
-and geocomp = '00'
-limit 1000;
-
+SELECT stusab, --| PRESENCE OF CHILDREN | Universe: households
+	--           Family Households:          
+	--             Married-couple family:
+	P0190001 + --          With own children under 18 years       
+	--             Other family:                            
+	--               Male householder, no wife present:     
+	P0190003 + --          With own children under 18 years     
+	--               Female householder, no husband present:
+	P0190005   --          With own children under 18 years     
+	as total__family_households_with_children
+	FROM dc1990.stf1a0 header
+	JOIN dc1990.stf306 USING (statefp, logrecnu)
+	where header.sumlev = '040'
+	and geocomp = '00'
+	limit 1000;
 
 DC2000
 
