@@ -131,6 +131,7 @@ SELECT
 name,
 --| POVERTY STATUS IN 1999 OF FAMILIES BY FAMILY TYPE BY PRESENCE OF RELATED CHILDREN UNDER 18 YEARS BY AGE OF RELATED CHILDREN | Universe: Families
 p090002 -- Total- income in 1999 below poverty level 
+as total__families_below_poverty_level
 FROM dc2000.geosf3 header
 join dc2000.sf30007 using (stusab, logrecno)
 where header.sumlev = '040'

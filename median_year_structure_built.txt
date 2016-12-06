@@ -47,11 +47,12 @@ name,
 --| MEDIAN YEAR STRUCTURE BUILT 
      b250350001 -- Median year structure built
      as median_year_structure_built
-FROM acs_2012.geoheader_2012 header
-join acs_2012.seq0104_2012 USING (stusab, logrecno)
-where header.sumlevel = '040'
+FROM acs2012.geoheader header
+join acs2012.seq0104 USING (stusab, logrecno)
+where header.sumlevel = '150'
 and component = '00'
 limit 1000;
+
 
 *******ACS2014*******
 

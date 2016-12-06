@@ -1,16 +1,5 @@
---|PRESENCE OF CHILDREN | Universe: households
-     p0190008 + -- family households: husband-wife family: with own children under 18 years
-     p0190012 + -- family households: other family: male householder, no wife present: with own children under 18 years
-     p0190015   -- family households: other family: female householder, no husband present: with own children under 18 years
-as total__family_households_with_children,
-
-
-
-
-
 
 from dc2010.geoheader_sf1 header
-join dc2010.sf1_00005 using (stusab, logrecno) -- presence of children
 
 
 ;        

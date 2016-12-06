@@ -16,6 +16,37 @@ DC1990
      STF306     P0190007     Nonfamily households                           
 
 
+ P004         |          | FAMILIES                                                             | STF301
+ P004         |          | Universe: Families                                                   |
+ P004         | P0040001 | Total                                                                | STF301
+ P005         |          | HOUSEHOLDS                                                           | STF301
+ P005         |          | Universe: Households                                                 |
+ P005         | P0050001 | Total                                                                | STF301
+
+SELECT 
+STF306.P0190001 +
+STF306.P0190002 +
+STF306.P0190003 +
+STF306.P0190004 +
+STF306.P0190005 +
+STF306.P0190006 +
+STF306.P0190007 as sum_households,
+STF306.P0190001 +
+STF306.P0190002 +
+STF306.P0190003 +
+STF306.P0190004 +
+STF306.P0190005 +
+STF306.P0190006 as sum_families,
+STF301.P0040001 as families,
+STF301.P0050001 as households
+FROM 
+dc1990.STF306 join dc1990.STF301 USING (statefp, logrecnu) limit 100;
+
+
+
+
+
+
 SELECT stusab, --| PRESENCE OF CHILDREN | Universe: households
 	--           Family Households:          
 	--             Married-couple family:
@@ -28,7 +59,7 @@ SELECT stusab, --| PRESENCE OF CHILDREN | Universe: households
 	as total__family_households_with_children
 	FROM dc1990.stf1a0 header
 	JOIN dc1990.stf306 USING (statefp, logrecnu)
-	where header.sumlev = '040'
+	where header.sumlev = '150'
 	and geocomp = '00'
 	limit 1000;
 
@@ -47,7 +78,35 @@ DC2000
      SF30001                             female householder, no husband present:
      SF30001       p010015                   with own children under 18 years
 
-select p010008 from dc2000.sf30001;
+
+ p010       |            | p10.      | household size by household type by presence of own children under 18 years [19]                                                                                                                         |
+ p010       |            |           | universe:  households                                                                                                                                                                                    |
+ p010       | p010001    |           | total:                                                                                                                                                                                                   | 01
+ p010       | p010002    |           | 1-person household:                                                                                                                                                                                      | 01
+ p010       | p010003    |           | male householder                                                                                                                                                                                         | 01
+ p010       | p010004    |           | female householder                                                                                                                                                                                       | 01
+ p010       | p010005    |           | 2-or-more-person household:                                                                                                                                                                              | 01
+ p010       | p010006    |           | family households:                                                                                                                                                                                       | 01
+ p010       | p010007    |           | married-couple family:                                                                                                                                                                                   | 01
+ p010       | p010008    |           | with own children under 18 years                                                                                                                                                                         | 01
+ p010       | p010009    |           | no own children under 18 years                                                                                                                                                                           | 01
+ p010       | p010010    |           | other family:                                                                                                                                                                                            | 01
+ p010       | p010011    |           | male householder, no wife present:                                                                                                                                                                       | 01
+ p010       | p010012    |           | with own children under 18 years                                                                                                                                                                         | 01
+ p010       | p010013    |           | no own children under 18 years                                                                                                                                                                           | 01
+ p010       | p010014    |           | female householder, no husband present:                                                                                                                                                                  | 01
+ p010       | p010015    |           | with own children under 18 years                                                                                                                                                                         | 01
+ p010       | p010016    |           | no own children under 18 years                                                                                                                                                                           | 01
+ p010       | p010017    |           | nonfamily households:                                                                                                                                                                                    | 01
+ p010       | p010018    |           | male householder                                                                                                                                                                                         | 01
+ p010       | p010019    |           | female householder                                                                                                                                                                                       | 01
+
+SELECT
+sf30019.pct003001 as test_families,
+sf30001.p010006 as total_families
+FROM dc2000.sf30019 join dc2000.sf30001 using (stusab, logrecno) limit 100;
+
+
 
 
 SELECT 
@@ -59,7 +118,7 @@ p010015   --  other family: female householder, no husband present: with own chi
 as total__family_households_with_children
 FROM dc2000.geosf3 header
 join dc2000.sf30001 USING (stusab, logrecno)
-where header.sumlev = '040'
+where header.sumlev = '150'
 and geocomp = '00'
 limit 1000; 
 
@@ -88,7 +147,7 @@ p0190015   -- family households: other family: female householder, no husband pr
 as total__family_households_with_children
 from dc2010.geoheader_sf1 header
 join dc2010.sf1_00005 using (stusab, logrecno)
-where header.sumlev = '040'
+where header.sumlev = '150'
 and geocomp = '00'
 limit 155;
 
@@ -114,7 +173,7 @@ B11004010 + -- family households: other family: male householder, no wife presen
 B11004016   -- family households: other family: female householder, no husband present: with own children under 18 years
 FROM acs2014.geoheader header
 join acs2014.seq0036 using (stusab, logrecno)
-where header.sumlevel = '040'
+where header.sumlevel = '150'
 and component = '00'
 limit 144;
 

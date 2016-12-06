@@ -1,15 +1,28 @@
---| MEDIAN YEAR STRUCTURE BUILT | (meta table doesn't specify universe)
-     b250350001 -- Median year structure built
-     as median_year_structure_built,
 
 
+    --| MEDIAN YEAR STRUCTURE BUILT | Universe: housing units 
+    seq0104.b250350001 -- Median year structure built
+    as median_year_structure_built,
+
+    -- | POVERTY STATUS BY AGE AND SEX | Universe - population for whom poverty status is determined
+    seq0054.b170210002
+    as total__persons_below_poverty_level
+    FROM acs2012.geoheader header
+
+    --| HOUSEHOLD POVERTY STATUS BY HOUSEHOLD TYPE | Universe - households
+    seq0053.b170170002 -- Total- Income in the past 12 months below poverty level
+    as total__households_below_poverty_level
+
+    --| FAMILY POVERTY LEVEL STATUS | Universe-families
+    seq0050.B170100002 -- Total- Income in the past 12 months below poverty level
+    as total__families_below_poverty_level
 
 
-
-FROM acs_2012.geoheader_2012 header
-join acs_2012.seq0104_2012 USING (stusab, logrecno) -- median year structure built
-
-
+FROM acs2012.geoheader header
+join acs2012.seq0104 USING (stusab, logrecno) -- median year structure built
+join acs2012.seq0054 using (stusab, logrecno)
+JOIN acs2012.seq0053 using (stusab,logrecno)
+join acs2012.seq0050 USING (stusab, logrecno)
 ;
 
 
