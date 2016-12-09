@@ -1,0 +1,52 @@
+Commute Type
+Primary Language
+Food Stamps - dc support -- might have a diff name back then
+SNAP - same as food stamps
+Family Status
+Building Age of Housing Units
+Working Population
+Number of Jobs
+Wage of Workers
+Private School Enrollment
+Public School Enrollment
+Commute Origin and Destination
+Participation in Labor Force
+Employment Industry by Home Location
+Homeowner Vacancy Rate
+Low and Very Low Income Persons
+Civilian Employment by Occupation
+Median Earnings - Total
+People with Low Access to Food - 1 Mile
+Population Living with Disability
+Employment Industry by Job Location 2013
+Employment Industry
+School Proficiency Index
+Income to Poverty Ratio
+Total Households Below Poverty Level
+Rental Vacancy Rate
+Home Mortgages
+Primary Language Other Than English
+Bachelor's Degrees Received
+x Local Job Density
+Selected Monthly Ownership Costs as a Percentage of Income
+Health Insurance Coverage - no dc
+Employment Access Index
+Family Household Size
+Employment Rate
+x Number of Jobs
+Home Mortgages
+Enrollment Status
+Nonfamily Household Size
+Children with Low Access to Food
+Registered Voters
+Language Isolation
+Fires
+Party Affiliation by Percent - Republican
+Total Registered Voters
+Percent High School Educated
+Party Affiliation by Percent - Democrat
+Party Affiliation by Percent - Republican
+Mortgage Status of Owner Occupied Housing Units
+Retail Job Access Index
+Age by Sex, Females
+Generations

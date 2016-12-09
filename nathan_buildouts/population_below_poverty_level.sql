@@ -1,6 +1,5 @@
 DC1990
 
--- there are some groups of people for which Poverty status can't be determined (i.e. college dorms, military barracks, etc.)
 
           | POVERTY STATUS IN 1989 BY AGE                                        | STF322
           | Universe: Persons for whom poverty status is determined              |
@@ -35,6 +34,7 @@ DC1990
 --TEST QUERIES
 --STATES
 
+drop table temp;
 SELECT
 stusab,
 --| POVERTY STATUS IN 1989 BY AGE | Universe: Persons for whom poverty status is determined
@@ -52,14 +52,25 @@ STF322.P1170022 + -- 60 to 64 years
 STF322.P1170023 + -- 65 to 74 years          
 STF322.P1170024 -- 75 years and over       
 as total__persons_below_poverty_level
+INTO public.temp
 FROM dc1990.stf1a0 header
 JOIN dc1990.STF322 using (statefp, logrecnu)
 where header.sumlev = '040'
 and geocomp = '00'
-limit 1000;
+;
+select * from histogram('public', 'temp', 'total__persons_below_poverty_level');
+
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   47906 |  437089 |   26 | ******************************
+      2 |  508545 |  829858 |   20 | ***********************
+      3 |  923085 | 1190698 |    5 | ******
+      4 | 1283629 | 1604186 |   11 | *************
+      6 | 2277296 | 2277296 |    3 | ***
+      8 | 3000515 | 3000515 |    2 | **
+     10 | 3627585 | 3627585 |    4 | *****
 
 --BLOCK GROUPS
-
 SELECT
 header.blckgr,
 --| POVERTY STATUS IN 1989 BY AGE | Universe: Persons for whom poverty status is determined
@@ -81,8 +92,7 @@ FROM dc1990.stf1a0 header
 JOIN dc1990.STF322 using (statefp, logrecnu)
 where header.sumlev = '150'
 and geocomp = '00'
-limit 1000;
-
+;
 
 
 ***DC2000***
@@ -110,16 +120,29 @@ SF30007     p087017     75 years and over
 
 --TEST QUERIES
 --STATES
+drop table temp;
 SELECT
 name,
 --| POVERTY STATUS IN 1999 BY AGE | Universe:  population for whom poverty status is determined
 sf30007.p087002 -- income in 1999 below poverty level
 as total__persons_below_poverty_level
+INTO public.temp
 FROM dc2000.geosf3 header
 JOIN dc2000.sf30007 USING (stusab, logrecno)
 where header.sumlev = '040'
 and geocomp = '00'
 ;
+select * from histogram('public', 'temp', 'total__persons_below_poverty_level');
+
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   54777 |  559484 |   31 | ******************************
+      2 |  573421 | 1033793 |   12 | ************
+      3 | 1170698 | 1304117 |    3 | ***
+      4 | 1818687 | 1952629 |    2 | **
+      6 | 2692202 | 3117609 |    2 | **
+     10 | 4706130 | 4706130 |    1 | *
+
 
 --BLOCK GROUPS
 SELECT
@@ -189,18 +212,30 @@ SEQ0047          B170010002     Total: Income in the past 12 months below povert
 -- TEST QUERIES
 -- STATES
 
+drop table temp;
 SELECT 
 header.name,
 -- | POVERTY STATUS BY AGE AND SEX | Universe - population for whom poverty status is determined
 seq0054.b170210002
 as total__persons_below_poverty_level
+INTO public.temp
 FROM acs2012.geoheader header
 join acs2012.seq0054 using (stusab, logrecno)
 where header.sumlevel = '040'
 and component = '00'
-limit 100; 
+;
+select * from histogram('public', 'temp', 'total__persons_below_poverty_level');
 
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   60636 |  640132 |   28 | ******************************
+      2 |  690832 | 1074986 |   13 | **************
+      3 | 1563464 | 1723485 |    7 | ********
+      5 | 2814409 | 2887151 |    2 | **
+      7 | 4270218 | 4270218 |    1 | *
+     10 | 5590100 | 5590100 |    1 | *
 
+-- BLOCK GROUPS
 
 SELECT 
 header.name,
@@ -211,8 +246,7 @@ FROM acs2012.geoheader header
 join acs2012.seq0054 using (stusab, logrecno)
 where header.sumlevel = '150'
 and component = '00'
-limit 100; 
-
+;
 
 
 ***ACS2014***
@@ -224,17 +258,20 @@ SEQ0054          B17021002       Income in the past 12 months below poverty leve
 
 --TEST QUERIES
 --STATES
-
+drop table temp;
 SELECT
 name,
 --| POVERTY STATUS OF INDIVIDUALS IN THE PAST 12 MONTHS BY LIVING ARRANGEMENT | Universe:  Population for whom poverty status is determined
 seq0054.B17021002 -- Income in the past 12 months below poverty level
 as total__persons_below_poverty_level
+INTO public.temp
 FROM acs2014.geoheader header
 join acs2014.seq0054 using (stusab,logrecno)
 where header.sumlevel = '040'
 and component = '00'
-limit 1000;
+;
+select * from histogram('public', 'temp', 'total__persons_below_poverty_level');
+
 
 --BLOCK GROUPS
 
@@ -246,12 +283,7 @@ FROM acs2014.geoheader header
 join acs2014.seq0054 using (stusab,logrecno)
 where header.sumlevel = '150'
 and component = '00'
-limit 1000;
-
-
-
-
-
+;
 
 
 

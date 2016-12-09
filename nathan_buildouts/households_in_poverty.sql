@@ -92,40 +92,57 @@ limit 100;
 --TEST QUERIES
 --STATES
 
+drop table temp;
 SELECT
 stusab,
 -- | POVERTY STATUS IN 1989 BY AGE OF HOUSEHOLDER BY HOUSEHOLD TYPE | Universe: Households 
   --  Income in 1989 below poverty level:                            
   --    Householder 15 to 64 years:                                  
-y.P1270016 +  --      Married-couple family                                      
-  --      Other family:                                              
-y.P1270017 +  --        Male householder, no wife present                        
-y.P1270018 +  --        Female householder, no husband present                   
-  --      Nonfamily households:                                      
-y.P1270019 +  --        Householder living alone                                 
-y.P1270020 +  --        Householder not living alone                             
-  --    Householder 65 to 74 years:                                  
-y.P1270021 +  --      Married-couple family                                      
-  --      Other family:                                              
-y.P1270022 +  --        Male householder, no wife present                        
-y.P1270023 +  --        Female householder, no husband present                   
-  --      Nonfamily households:                                      
-y.P1270024 +  --        Householder living alone                                 
-y.P1270025 +  --        Householder not living alone                             
-  --    Householder 75 years and over:                               
-y.P1270026 +  --      Married-couple family                                      
-  --      Other family:                                              
-y.P1270027 +  --        Male householder, no wife present                        
-y.P1270028 +  --        Female householder, no husband present                   
-  --      Nonfamily households:                                      
-y.P1270029 +  --        Householder living alone                                 
-y.P1270030   --        Householder not living alone                             
+stf326.P1270016 +  --      Married-couple family                                      
+--      Other family:                                              
+stf326.P1270017 +  --        Male householder, no wife present                        
+stf326.P1270018 +  --        Female householder, no husband present                   
+--      Nonfamily households:                                      
+stf326.P1270019 +  --        Householder living alone                                 
+stf326.P1270020 +  --        Householder not living alone                             
+--    Householder 65 to 74 years:                                  
+stf326.P1270021 +  --      Married-couple family                                      
+--      Other family:                                              
+stf326.P1270022 +  --        Male householder, no wife present                        
+stf326.P1270023 +  --        Female householder, no husband present                   
+--      Nonfamily households:                                      
+stf326.P1270024 +  --        Householder living alone                                 
+stf326.P1270025 +  --        Householder not living alone                             
+--    Householder 75 years and over:                               
+stf326.P1270026 +  --      Married-couple family                                      
+--      Other family:                                              
+stf326.P1270027 +  --        Male householder, no wife present                        
+stf326.P1270028 +  --        Female householder, no husband present                   
+--      Nonfamily households:                                      
+stf326.P1270029 +  --        Householder living alone                                 
+stf326.P1270030   --        Householder not living alone                             
 as total__households_below_poverty_level 
+INTO public.temp
 FROM dc1990.stf1a0 header 
-JOIN dc1990.stf326 y using (statefp, logrecnu)
+JOIN dc1990.stf326 using (statefp, logrecnu)
 where header.sumlev = '040'
 and geocomp = '00'
 ;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   15140 |  127074 |   20 | ******************************
+      2 |  134297 |  241453 |   19 | ****************************
+      3 |  268596 |  351770 |    9 | **************
+      4 |  444535 |  444535 |    3 | ****
+      5 |  481483 |  512172 |    9 | **************
+      6 |  619514 |  619514 |    2 | ***
+      8 |  845603 |  845603 |    3 | ****
+      9 | 1001688 | 1001688 |    2 | ***
+     10 | 1049206 | 1049206 |    4 | ******
+
+
 
 --BLOCK GROUPS
 SELECT
@@ -133,32 +150,32 @@ header.blckgr,
 -- | POVERTY STATUS IN 1989 BY AGE OF HOUSEHOLDER BY HOUSEHOLD TYPE | Universe: Households 
   --  Income in 1989 below poverty level:                            
   --    Householder 15 to 64 years:                                  
-y.P1270016 +  --      Married-couple family                                      
-  --      Other family:                                              
-y.P1270017 +  --        Male householder, no wife present                        
-y.P1270018 +  --        Female householder, no husband present                   
-  --      Nonfamily households:                                      
-y.P1270019 +  --        Householder living alone                                 
-y.P1270020 +  --        Householder not living alone                             
-  --    Householder 65 to 74 years:                                  
-y.P1270021 +  --      Married-couple family                                      
-  --      Other family:                                              
-y.P1270022 +  --        Male householder, no wife present                        
-y.P1270023 +  --        Female householder, no husband present                   
-  --      Nonfamily households:                                      
-y.P1270024 +  --        Householder living alone                                 
-y.P1270025 +  --        Householder not living alone                             
-  --    Householder 75 years and over:                               
-y.P1270026 +  --      Married-couple family                                      
-  --      Other family:                                              
-y.P1270027 +  --        Male householder, no wife present                        
-y.P1270028 +  --        Female householder, no husband present                   
-  --      Nonfamily households:                                      
-y.P1270029 +  --        Householder living alone                                 
-y.P1270030   --        Householder not living alone                             
+stf326.P1270016 +  --      Married-couple family                                      
+--      Other family:                                              
+stf326.P1270017 +  --        Male householder, no wife present                        
+stf326.P1270018 +  --        Female householder, no husband present                   
+--      Nonfamily households:                                      
+stf326.P1270019 +  --        Householder living alone                                 
+stf326.P1270020 +  --        Householder not living alone                             
+--    Householder 65 to 74 years:                                  
+stf326.P1270021 +  --      Married-couple family                                      
+--      Other family:                                              
+stf326.P1270022 +  --        Male householder, no wife present                        
+stf326.P1270023 +  --        Female householder, no husband present                   
+--      Nonfamily households:                                      
+stf326.P1270024 +  --        Householder living alone                                 
+stf326.P1270025 +  --        Householder not living alone                             
+--    Householder 75 years and over:                               
+stf326.P1270026 +  --      Married-couple family                                      
+--      Other family:                                              
+stf326.P1270027 +  --        Male householder, no wife present                        
+stf326.P1270028 +  --        Female householder, no husband present                   
+--      Nonfamily households:                                      
+stf326.P1270029 +  --        Householder living alone                                 
+stf326.P1270030   --        Householder not living alone                             
 as total__households_below_poverty_level 
 FROM dc1990.stf1a0 header 
-JOIN dc1990.stf326 y using (statefp, logrecnu)
+JOIN dc1990.stf326 using (statefp, logrecnu)
 where header.sumlev = '150'
 and geocomp = '00'
 ;
@@ -182,29 +199,43 @@ FROM dc2000.sf30008 x join dc2000.sf30001 y using (stusab, logrecno) limit 100;
 
 --TEST QUERIES
 --STATES
+drop table temp;
 SELECT
 header.name,
 --| POVERTY STATUS IN 1999 OF HOUSEHOLDS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER | Universe - Households
-x.p092002  -- income in 1999 below poverty level:
+sf30008.p092002  -- income in 1999 below poverty level:
 as total__households_below_poverty_level
+INTO public.temp
 FROM dc2000.geosf3 header 
-join dc2000.sf30008 x using (stusab, logrecno) 
+join dc2000.sf30008 using (stusab, logrecno) 
 where header.sumlev = '040'
 and geocomp = '00'
-limit 100;
+;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   18435 |  164788 |   26 | ******************************
+      2 |  174845 |  311730 |   14 | ****************
+      3 |  316991 |  465376 |    5 | ******
+      4 |  474607 |  596466 |    3 | ***
+      5 |  743525 |  743525 |    1 | *
+      7 |  982266 | 1034059 |    2 | **
+     10 | 1360284 | 1360284 |    1 | *
+
+
 
 --BLOCK GROUPS
 SELECT
 header.name,
 --| POVERTY STATUS IN 1999 OF HOUSEHOLDS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER | Universe - Households
-x.p092002  -- income in 1999 below poverty level:
+sf30008.p092002  -- income in 1999 below poverty level:
 as total__households_below_poverty_level
 FROM dc2000.geosf3 header 
-join dc2000.sf30008 x using (stusab, logrecno) 
+join dc2000.sf30008 using (stusab, logrecno) 
 where header.sumlev = '150'
 and geocomp = '00'
-limit 100;
-
+;
 
 
 ***ACS2012***
@@ -225,30 +256,43 @@ SEQ0053  b170170002     Total- Income in the past 12 months below poverty level
 --TEST QUERIES
 --STATES
 
+drop table temp;
 SELECT
 name,
 --| HOUSEHOLD POVERTY STATUS BY HOUSEHOLD TYPE | Universe - households
-y.b170170002 -- Total- Income in the past 12 months below poverty level
+seq0053.b170170002 -- Total- Income in the past 12 months below poverty level
 as total__households_below_poverty_level
+INTO public.temp
 FROM acs2012.geoheader header 
-JOIN acs2012.seq0053 y using (stusab,logrecno) 
+JOIN acs2012.seq0053 using (stusab,logrecno) 
 where header.sumlevel = '040'
 and component = '00'
-limit 100;
+;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   20271 |  201526 |   23 | ******************************
+      2 |  216775 |  343228 |   17 | **********************
+      3 |  403321 |  567070 |    4 | *****
+      4 |  573705 |  662157 |    4 | *****
+      6 | 1019792 | 1028106 |    2 | ***
+      8 | 1361960 | 1361960 |    1 | *
+     10 | 1675718 | 1675718 |    1 | *
+
 
 --BLOCK GROUPS
 
 SELECT
 name,
 --| HOUSEHOLD POVERTY STATUS BY HOUSEHOLD TYPE | Universe - households
-y.b170170002 -- Total- Income in the past 12 months below poverty level
+seq0053.b170170002 -- Total- Income in the past 12 months below poverty level
 as total__households_below_poverty_level
 FROM acs2012.geoheader header 
-JOIN acs2012.seq0053 y using (stusab,logrecno) 
+JOIN acs2012.seq0053 using (stusab,logrecno) 
 where header.sumlevel = '150'
 and component = '00'
-limit 100;
-
+;
 
 
 ***ACS2014***
@@ -304,27 +348,40 @@ limit 100;
 --TEST QUERIES
 --STATES
 
+drop table temp;
 SELECT
 name,
 --| POVERTY STATUS IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER | Universe - Households
-y.B17017002 -- Income in the past 12 months below poverty level
+seq0053.B17017002 -- Income in the past 12 months below poverty level
 as total__households_below_poverty_level
+INTO public.temp
 from acs2014.geoheader header
-join acs2014.seq0053 y using (stusab, logrecno)
+join acs2014.seq0053 using (stusab, logrecno)
 where header.sumlevel = '040'
 and component = '00'
-limit 100;
+;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+ bucket |   min   |   max   | freq |              bar               
+--------+---------+---------+------+--------------------------------
+      1 |   21345 |  206377 |   23 | ******************************
+      2 |  230495 |  416587 |   18 | ***********************
+      3 |  555882 |  601119 |    4 | *****
+      4 |  639670 |  685149 |    3 | ****
+      6 | 1071715 | 1094402 |    2 | ***
+      7 | 1418910 | 1418910 |    1 | *
+     10 | 1833084 | 1833084 |    1 | *
+
 
 --BLOCK GROUPS
 
 SELECT
 name,
 --| POVERTY STATUS IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER | Universe - Households
-y.B17017002 -- Income in the past 12 months below poverty level
+seq0053.B17017002 -- Income in the past 12 months below poverty level
 from acs2014.geoheader header
 join acs2014.seq0053 y using (stusab, logrecno)
 where header.sumlevel = '150'
 and component = '00'
-limit 100;
-
+;
 

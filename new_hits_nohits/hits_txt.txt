@@ -1,0 +1,27 @@
+# can we do highschool and bachelor degrees?
+#Vacant Housing Units
+#Household Size
+#Employment Status
+#Median Year Structure Built
+Vehicles Available
+Travel Time to Work
+Bicycle
+Disability
+#Per Capita Income
+#Educational Attainment 
+Year Householder Moved Into Unit - 2010, 2012
+Year Householder Moved Into Unit - 2010, 2012
+#Gross Rent as a Percentage of Income
+Families Below Poverty Level - 2010, 2012
+Median Age - 1990
+Units in Structure - 2010, 2012
+#Population Under 18
+Children
+Mortgage
+#Vacancy Status
+#Enrolled In School
+Marital Status - 2010, 2012 -- should be able to find though
+Presence of Children
+xMedian Earnings - Female
+xMedian Earnings - Male
+#Total Number of Unemployed
