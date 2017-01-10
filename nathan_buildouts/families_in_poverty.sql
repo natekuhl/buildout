@@ -48,8 +48,7 @@ stf324.p1230022 +  -- Income in 1989 below poverty level  Other family   Female 
 stf324.p1230023 +  -- Income in 1989 below poverty level  Other family   Female householder, no husband present   With related children under 18 years  Under 5 years and 5 to 17 years
 stf324.p1230024    -- Income in 1989 below poverty level  Other family   Female householder, no husband present   No related children under 18 years 
 as total__families_below_poverty_level
-INTO public.temp
-FROM dc1990.stf1a0 header 
+FROM dc1990.stf300 header 
 join dc1990.STF324 using (statefp, logrecnu)
 where header.sumlev = '040'
 and header.geocomp = '00'

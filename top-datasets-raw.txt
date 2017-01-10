@@ -1,305 +1,102 @@
-1	
-Median Household Income
-Show usage per customer	115	37
-2	
-Educational Attainment
-Show usage per customer	96	24
-3	
-Race/Ethnicity Totals
-Show usage per customer	86	23
-4	
-Commute Type
-Show usage per customer	65	22
-5	
-Age Totals - 5 to 9
-Show usage per customer	48	20
-6	
-Primary Language Spoken at Home
-Show usage per customer	42	13
-7	
-Owner vs Renter Occupied - Owner Occupied
-Show usage per customer	42	16
-8	
-Summary Stats (ACS 2010-2014) - Total Housing Units
-Show usage per customer	39	15
-9	
-UCR - Crime by Type
-Show usage per customer	38	20
-10	
-Household Income
-Show usage per customer	38	28
-11	
-Employment Status
-Show usage per customer	37	20
-12	
-Generations
-Show usage per customer	32	12
-13	
-Year Householder Moved Into Unit - 2010 or Later
-Show usage per customer	32	7
-14	
-Household Size - 2 Person Non-Family Household
-Show usage per customer	29	7
-15	
-Total Receiving Food Stamps/SNAP
-Show usage per customer	28	14
-16	
-Total Population
-Show usage per customer	28	13
-17	
-Occupied Housing Units, by Vehicles Available - None
-Show usage per customer	24	9
-18	
-Family Status
-Show usage per customer	23	16
-19	
-Travel Time to Work
-Show usage per customer	23	14
-20	
-Building Age of Housing Units - Built 1950 to 1959
-Show usage per customer	22	14
-21	
-Total Working Population 16 and Over
-Show usage per customer	22	15
-22	
-Per Capita Income
-Show usage per customer	21	8
-23	
-Number of Jobs
-Show usage per customer	19	14
-24	
-Wage of Workers
-Show usage per customer	18	12
-25	
-Vacant Housing Units
-Show usage per customer	18	6
-26	
-Private School Enrollment by Grade
-Show usage per customer	18	10
-27	
-Public School Enrollment by Grade - Grades 9 to 12
-Show usage per customer	17	11
-28	
-Commute Origin and Destination (Workers Over 16)
-Show usage per customer	16	6
-29	
-Median Home Value
-Show usage per customer	16	9
-30	
-Participation in Labor Force
-Show usage per customer	15	8
-31	
-Employment Industry by Home Location
-Show usage per customer	15	10
-32	
-Homeowner Vacancy Rate
-Show usage per customer	15	6
-33	
-Gross Rent as a Percentage of Income
-Show usage per customer	15	7
-34	
-Low and Very Low Income Persons
-Show usage per customer	15	13
-35	
-Civilian Employment by Occupation
-Show usage per customer	14	11
-36	
-Median Earnings - Total
-Show usage per customer	14	6
-37	
-People with Low Access to Food - 1 Mile
-Show usage per customer	14	6
-38	
-Population Living with Disability
-Show usage per customer	14	9
-39	
-Employment Industry by Job Location 2013
-Show usage per customer	13	10
-40	
-School Proficiency Index
-Show usage per customer	13	8
-41	
-Families Below Poverty Level
-Show usage per customer	13	8
-42	
-Income to Poverty Ratio
-Show usage per customer	13	11
-43	
-Total Households Below Poverty Level
-Show usage per customer	13	7
-44	
-Rental Vacancy Rate
-Show usage per customer	12	7
-45	
-Home Mortgages - 2014
-Show usage per customer	12	4
-46	
-Primary Language Other Than English
-Show usage per customer	12	4
-47	
-Bachelor's Degrees Received
-Show usage per customer	12	6
-48	
-Local Job Density
-Show usage per customer	12	9
-49	
-Selected Monthly Ownership Costs as a Percentage of Income
-Show usage per customer	11	4
-50	
-Change in Population 2000 to 2010
-Show usage per customer	11	6
-51	
-Median Home Rent
-Show usage per customer	11	7
-52	
-Median Age
-Show usage per customer	10	8
-53	
-Ethnicity - Hispanic: Historical Census Comparison
-Show usage per customer	10	7
-54	
-Sex
-Show usage per customer	10	7
-55	
-Units in Structure - 20 to 49
-Show usage per customer	10	7
-56	
-Population Under 18, by Age Group
-Show usage per customer	10	9
-57	
-Health Insurance Coverage - Uninsured
-Show usage per customer	10	6
-58	
-Total Housing Units (ACS 2010-2014)
-Show usage per customer	10	6
-59	
-Employment Access Index
-Show usage per customer	10	8
-60	
-Population: Historical Census Comparison
-Show usage per customer	10	8
-61	
-Total Population Under 18 (Children)
-Show usage per customer	9	6
-62	
-Family Household Size - 2010 - 4 People
-Show usage per customer	9	3
-63	
-Employment Rate
-Show usage per customer	9	3
-64	
-Total Population - 2010
-Show usage per customer	9	9
-65	
-Number of Jobs Between 2003 and 2013 - 2003
-Show usage per customer	9	8
-66	
-Change in Households 2000 to 2010
-Show usage per customer	9	3
-67	
-Home Mortgages - 2012 - Home Purchases
-Show usage per customer	9	6
-68	
-Enrollment Status
-Show usage per customer	8	7
-69	
-Home Value
-Show usage per customer	8	7
-70	
-Total Households (ACS 2010-2014)
-Show usage per customer	8	3
-71	
-Vacancy Status - 2010
-Show usage per customer	8	7
-72	
-Nonfamily Household Size - 2010 - 6 People
-Show usage per customer	8	1
-73	
-Total Owner Occupied Housing Units (ACS 2010-2014)
-Show usage per customer	8	3
-74	
-Children with Low Access to Food - 1 Mile
-Show usage per customer	7	5
-75	
-Enrolled In School
-Show usage per customer	7	6
-76	
-Marital Status
-Show usage per customer	7	7
-77	
-Registered Voters - Party Affiliation
-Show usage per customer	7	7
-78	
-Race - Black: Historical Census Comparison
-Show usage per customer	7	4
-79	
-Presence of Children - Single Female - 6 to 17 Only
-Show usage per customer	6	5
-80	
-Median Earnings - Female
-Show usage per customer	6	4
-81	
-Language Isolation
-Show usage per customer	6	4
-82	
-Olathe, KS Fires - 2015
-Show usage per customer	6	1
-83	
-Party Affiliation by Percent - Republican
-Show usage per customer	6	4
-84	
-Total Registered Voters
-Show usage per customer	6	4
-85	
-Cincinnati OH Total Crime by Year
-Show usage per customer	6	3
-86	
-Total Number of Unemployed
-Show usage per customer	6	4
-87	
-Percent High School Educated
-Show usage per customer	6	2
-88	
-Party Affiliation by Percent - Democrat
-Show usage per customer	6	4
-89	
-Race - White: Historical Census Comparison
-Show usage per customer	6	5
-90	
-Number of Jobs - 2013
-Show usage per customer	6	3
-91	
-Cincinnati OH All Crime from 2010 to 2015
-Show usage per customer	6	2
-92	
-Mortgage Status of Owner Occupied Housing Units
-Show usage per customer	5	2
-93	
-Retail Job Access Index
-Show usage per customer	5	5
-94	
-Age by Sex, Females
-Show usage per customer	5	5
-95	
-Disability by Age - 18 to 64
-Show usage per customer	5	3
-96	
-Percent Change - Jobs 2003 to 2013
-Show usage per customer	5	4
-97	
-Median Commute Distance
-Show usage per customer	5	4
-98	
-Total Area (acres)
-Show usage per customer	5	4
-99	
-Commute Mean Travel Time
-Show usage per customer	5	4
-100	
-Commute by Bicycle
-Show usage per customer	5	5
-101	
-Employment Industry by Job Location 2003 - Public Administration
-Show usage per customer	5	5
-102
-Population Over 18
+#    Median Household Income
+#    Educational Attainment
+#    Race/Ethnicity Totals
+    Commute Type
+#    Age Totals - 5 to 9
+x    Primary Language Spoken at Home
+#    Owner vs Renter Occupied - Owner Occupied
+#    Summary Stats (ACS 2010-2014) - Total Housing Units
+    UCR - Crime by Type
+    Household Income
+#    Employment Status
+    Generations
+    Year Householder Moved Into Unit - 2010 or Later
+#   Household Size - 2 Person Non-Family Household
+    Total Receiving Food Stamps/SNAP
+#    Total Population
+    Occupied Housing Units, by Vehicles Available - None
+#    Family Status
+    Travel Time to Work
+    Building Age of Housing Units - Built 1950 to 1959
+    Total Working Population 16 and Over
+#    Per Capita Income
+    Number of Jobs
+    Wage of Workers
+    Vacant Housing Units
+    Private School Enrollment by Grade
+    Public School Enrollment by Grade - Grades 9 to 12
+    Commute Origin and Destination (Workers Over 16)
+    Median Home Value
+    Participation in Labor Force
+    Employment Industry by Home Location
+    Homeowner Vacancy Rate
+    Gross Rent as a Percentage of Income
+    Low and Very Low Income Persons
+    Civilian Employment by Occupation
+    Median Earnings - Total
+    People with Low Access to Food - 1 Mile
+    Population Living with Disability
+    Employment Industry by Job Location 2013
+    School Proficiency Index
+    Families Below Poverty Level
+#    Income to Poverty Ratio
+    Total Households Below Poverty Level
+    Rental Vacancy Rate
+    Home Mortgages - 2014
+    Primary Language Other Than English
+    Bachelor's Degrees Received
+    Local Job Density
+    Selected Monthly Ownership Costs as a Percentage of Income
+    Change in Population 2000 to 2010
+    Median Home Rent
+    Median Age
+    Ethnicity - Hispanic: Historical Census Comparison
+    Sex
+    Units in Structure - 20 to 49
+    Population Under 18, by Age Group
+    Health Insurance Coverage - Uninsured
+    Total Housing Units (ACS 2010-2014)
+    Employment Access Index
+    Population: Historical Census Comparison
+    Total Population Under 18 (Children)
+#    Family Household Size - 2010 - 4 People
+    Employment Rate
+    Total Population - 2010
+    Number of Jobs Between 2003 and 2013 - 2003
+    Change in Households 2000 to 2010
+    Home Mortgages - 2012 - Home Purchases
+    Enrollment Status
+    Home Value
+    Total Households (ACS 2010-2014)
+    Vacancy Status - 2010
+#    Nonfamily Household Size - 2010 - 6 People
+    Total Owner Occupied Housing Units (ACS 2010-2014)
+    Children with Low Access to Food - 1 Mile
+    Enrolled In School
+    Marital Status
+    Registered Voters - Party Affiliation
+    Race - Black: Historical Census Comparison
+    Presence of Children - Single Female - 6 to 17 Only
+    Median Earnings - Female
+    Language Isolation
+    Olathe, KS Fires - 2015
+    Party Affiliation by Percent - Republican
+    Total Registered Voters
+    Cincinnati OH Total Crime by Year
+    Total Number of Unemployed
+    Percent High School Educated
+    Party Affiliation by Percent - Democrat
+    Race - White: Historical Census Comparison
+    Number of Jobs - 2013
+    Cincinnati OH All Crime from 2010 to 2015
+    Mortgage Status of Owner Occupied Housing Units
+    Retail Job Access Index
+    Age by Sex, Females
+    Disability by Age - 18 to 64
+    Percent Change - Jobs 2003 to 2013
+    Median Commute Distance
+    Total Area (acres)
+    Commute Mean Travel Time
+    Commute by Bicycle
+    Employment Industry by Job Location 2003 - Public Administration
+    Population Over 18
