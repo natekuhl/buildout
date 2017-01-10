@@ -1,0 +1,79 @@
+DC1990
+
+drop table temp;
+SELECT stusab,
+-- | POVERTY STATUS IN 1989 BY FAMILY TYPE AND PRESENCE AND AGE OF CHILDREN | Universe   Families
+p1230013 +  -- Income in 1989 below poverty level   Married-couple family   With related children under 18 years   Under 5 years only
+p1230014 +  -- Income in 1989 below poverty level  Married-couple family   With related children under 18 years  5 to 17 years only
+p1230015 +  -- Income in 1989 below poverty level  Married-couple family   With related children under 18 years  Under 5 years and 5 to 17 years
+p1230016 +  -- Income in 1989 below poverty level  Married-couple family   No related children under 18 years
+p1230017 +  -- Income in 1989 below poverty level  Other family   Male householder, no wife present   With related children under 18 years  Under 5 years only
+p1230018 +  -- Income in 1989 below poverty level  Other family   Male householder, no wife present   With related children under 18 years  5 to 17 years only
+p1230019 +  -- Income in 1989 below poverty level  Other family   Male householder, no wife present   With related children under 18 years  Under 5 years and 5 to 17 years
+p1230020 +  -- Income in 1989 below poverty level  Other family   Male householder, no wife present   No related children under 18 years
+p1230021 +  -- Income in 1989 below poverty level  Other family   Female householder, no husband present   With related children under 18 years  Under 5 years only
+p1230022 +  -- Income in 1989 below poverty level  Other family   Female householder, no husband present   With related children under 18 years  5 to 17 years only
+p1230023 +  -- Income in 1989 below poverty level  Other family   Female householder, no husband present   With related children under 18 years  Under 5 years and 5 to 17 years
+p1230024    -- Income in 1989 below poverty level  Other family   Female householder, no husband present   No related children under 18 years
+as total__families_below_poverty_level
+INTO public.temp
+FROM dc1990.stf1a0 header
+join dc1990.STF324 using (statefp, logrecnu)
+where header.sumlev = '040'
+and header.geocomp = '00'
+;
+select * from histogram('public', 'temp', 'total__families_below_poverty_level');
+
+
+DC2000
+drop table temp;
+SELECT
+name,
+--| POVERTY STATUS IN 1999 OF FAMILIES BY FAMILY TYPE BY PRESENCE OF RELATED CHILDREN UNDER 18 YEARS BY AGE OF RELATED CHILDREN | Universe: Families
+p090002 -- Total- income in 1999 below poverty level
+as total__families_below_poverty_level
+INTO public.temp
+FROM dc2000.geosf3 header
+join dc2000.sf30007 using (stusab, logrecno)
+where header.sumlev = '040'
+and geocomp = '00'
+limit 144;
+select * from histogram('public', 'temp', 'total__families_below_poverty_level');
+
+
+ACS2012
+drop table temp;
+SELECT
+name,
+--| FAMILY POVERTY LEVEL STATUS | Universe-families
+B170100002 -- Total- Income in the past 12 months below poverty level
+as total__families_below_poverty_level
+INTO public.temp
+FROM acs2012.geoheader header
+join  acs2012.seq0050 USING (stusab, logrecno)
+where header.sumlevel = '040'
+and component = '00'
+limit 1000;
+select * from histogram('public', 'temp', 'total__families_below_poverty_level');
+
+
+ACS2014
+
+drop table temp;
+SELECT
+name,
+--| POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE BY PRESENCE OF RELATED CHILDREN UNDER 18 YEARS BY AGE OF RELATED CHILDREN | Universe: families
+     b17010002 -- Income in the past 12 months below poverty level
+     as total__families_below_poverty_level
+INTO public.temp
+FROM acs2014.geoheader header
+join acs2014.seq0050 USING (stusab, logrecno)
+where header.sumlevel= '040'
+and component = '00'
+limit 1000;
+select * from histogram('public', 'temp', 'total__families_below_poverty_level');
+
+
+
+
+

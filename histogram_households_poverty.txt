@@ -1,0 +1,93 @@
+DC1990
+drop table temp;
+SELECT
+stusab,
+-- | POVERTY STATUS IN 1989 BY AGE OF HOUSEHOLDER BY HOUSEHOLD TYPE | Universe: Households
+  --  Income in 1989 below poverty level:
+  --    Householder 15 to 64 years:
+y.P1270016 +  --      Married-couple family
+  --      Other family:
+y.P1270017 +  --        Male householder, no wife present
+y.P1270018 +  --        Female householder, no husband present
+  --      Nonfamily households:
+y.P1270019 +  --        Householder living alone
+y.P1270020 +  --        Householder not living alone
+  --    Householder 65 to 74 years:
+y.P1270021 +  --      Married-couple family
+  --      Other family:
+y.P1270022 +  --        Male householder, no wife present
+y.P1270023 +  --        Female householder, no husband present
+  --      Nonfamily households:
+y.P1270024 +  --        Householder living alone
+y.P1270025 +  --        Householder not living alone
+  --    Householder 75 years and over:
+y.P1270026 +  --      Married-couple family
+  --      Other family:
+y.P1270027 +  --        Male householder, no wife present
+y.P1270028 +  --        Female householder, no husband present
+  --      Nonfamily households:
+y.P1270029 +  --        Householder living alone
+y.P1270030   --        Householder not living alone
+as total__households_below_poverty_level
+INTO public.temp
+FROM dc1990.stf1a0 header
+JOIN dc1990.stf326 y using (statefp, logrecnu)
+where header.sumlev = '040'
+and geocomp = '00'
+;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+
+DC2000
+drop table temp;
+SELECT
+header.name,
+--| POVERTY STATUS IN 1999 OF HOUSEHOLDS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER | Universe - Households
+x.p092002  -- income in 1999 below poverty level:
+as total__households_below_poverty_level
+INTO public.temp
+FROM dc2000.geosf3 header
+join dc2000.sf30008 x using (stusab, logrecno)
+where header.sumlev = '040'
+and geocomp = '00'
+limit 100;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+
+
+
+ACS2012
+drop table temp;
+SELECT
+name,
+--| HOUSEHOLD POVERTY STATUS BY HOUSEHOLD TYPE | Universe - households
+y.b170170002 -- Total- Income in the past 12 months below poverty level
+as total__households_below_poverty_level
+INTO public.temp
+FROM acs2012.geoheader header
+JOIN acs2012.seq0053 y using (stusab,logrecno)
+where header.sumlevel = '040'
+and component = '00'
+limit 100;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+
+ACS2014
+drop table temp;
+SELECT
+name,
+--| POVERTY STATUS IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER | Universe - Households
+y.B17017002 -- Income in the past 12 months below poverty level
+as total__households_below_poverty_level
+INTO public.temp
+from acs2014.geoheader header
+join acs2014.seq0053 y using (stusab, logrecno)
+where header.sumlevel = '040'
+and component = '00'
+limit 100;
+select * from histogram('public', 'temp', 'total__households_below_poverty_level');
+
+
+
+
+
